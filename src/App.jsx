@@ -1,4 +1,4 @@
-// NEXO TRADE — build: 2026-05-19 17:38:05
+// NEXO TRADE — build: 2026-05-19 18:15:51
 import { useState, useEffect, useRef, useContext, createContext } from 'react';
 
 // ── THEME ─────────────────────────────────────────────────────────────────────
@@ -1385,37 +1385,30 @@ function PremiumPage({user, isPremium, onSubscribe, onNeedAuth, lang}){
   const savings = billing==="yearly" ? Math.round((9.99-7.99)*12) : 0;
 
   const FREE_FEATURES = [
-    {ok:true,  text:"Feed completo y publicar análisis"},
-    {ok:true,  text:"Top 5 acciones (ganadoras, perdedoras, etc.)"},
-    {ok:true,  text:"Noticias y calendario de Earnings"},
-    {ok:true,  text:"Trending y sentimiento del mercado"},
-    {ok:true,  text:"Perfil, avatares y sistema de niveles"},
-    {ok:true,  text:"Seguir usuarios y Top 5 Foristas"},
-    {ok:true,  text:"IA: 5 consultas al día"},
-    {ok:true,  text:"3 alertas de precio por email"},
-    {ok:true,  text:"7 idiomas disponibles"},
-    {ok:false, text:"Señales de trading"},
-    {ok:false, text:"Datos en tiempo real"},
-    {ok:false, text:"Alertas ilimitadas por email"},
-    {ok:false, text:"Webinars exclusivos"},
-    {ok:false, text:"Sin publicidad"},
-    {ok:false, text:"IA ilimitada"},
-    {ok:false, text:"Portfolio tracker"},
+    {ok:true,  text:"Foro general — publicar y comentar"},
+    {ok:true,  text:"Watchlist (hasta 5 acciones)"},
+    {ok:true,  text:"Battle Stocks — votar"},
+    {ok:true,  text:"Leaderboard público"},
+    {ok:true,  text:"Simulador paper trading"},
+    {ok:true,  text:"Sistema de puntos y badges"},
   ];
 
   const PREMIUM_FEATURES = [
-    {star:false, text:"Todo lo del plan Gratis"},
-    {star:true,  text:"🤖 IA ilimitada sin restricciones"},
-    {star:true,  text:"📧 Alertas ilimitadas por email"},
-    {star:false, text:"🚫 Experiencia sin publicidad"},
-    {star:true,  text:"📡 Señales de trading (entrada, target, stop)"},
-    {star:true,  text:"⚡ Datos de mercado en tiempo real"},
-    {star:true,  text:"🎓 Webinars mensuales en vivo"},
-    {star:false, text:"🏆 Insignia ⭐ Premium en tu perfil"},
-    {star:false, text:"📊 Portfolio tracker personal"},
-    {star:false, text:"🚀 Acceso anticipado a nuevas funciones"},
-    {star:false, text:"💬 Chat privado con traders Top 5"},
-    {star:false, text:"🛟 Soporte prioritario 24/7"},
+    {star:true, text:"★ Todo lo del plan Free"},
+    {star:true, text:"★ Calculadora Sharpe Ratio"},
+    {star:true, text:"★ Racha de ganancias + estadísticas"},
+    {star:true, text:"★ Evolución del portafolio"},
+    {star:true, text:"★ Calculadora riesgo/recompensa"},
+    {star:true, text:"★ Alertas de precio personalizadas"},
+    {star:true, text:"★ Alertas de noticias del día"},
+    {star:true, text:"★ Bot IA de trading"},
+    {star:true, text:"★ Exportar datos (Excel/CSV)"},
+    {star:true, text:"★ Watchlist semanal ilimitada"},
+    {star:true, text:"★ GIFs en posts"},
+    {star:true, text:"★ Gráficas japonesas avanzadas"},
+    {star:true, text:"★ Sala VIP exclusiva"},
+    {star:true, text:"★ Perfil privado top traders"},
+    {star:true, text:"★ Badge VIP en perfil y posts"},
   ];
 
   const SIGNALS = [
@@ -1515,12 +1508,12 @@ function PremiumPage({user, isPremium, onSubscribe, onNeedAuth, lang}){
           {/* FREE PLAN */}
           <div style={{background:C.surface,border:`1px solid ${C.border}`,borderRadius:20,padding:28,boxShadow:C.shadow}}>
             <div style={{marginBottom:20}}>
-              <div style={{fontSize:12,fontWeight:700,color:C.muted,letterSpacing:1,marginBottom:8}}>PLAN GRATUITO</div>
+              <div style={{fontSize:12,fontWeight:700,color:C.muted,letterSpacing:1,marginBottom:8}}>COMUNIDAD</div>
               <div style={{display:"flex",alignItems:"baseline",gap:4,marginBottom:6}}>
-                <span style={{fontSize:36,fontWeight:900,color:C.text}}>€0</span>
-                <span style={{color:C.muted2,fontSize:14}}>/mes</span>
+                <span style={{fontSize:36,fontWeight:900,color:C.text}}>Gratis</span>
               </div>
-              <p style={{color:C.muted,fontSize:13,margin:0,lineHeight:1.5}}>Para empezar a explorar la comunidad inversora.</p>
+              <p style={{color:C.accent,fontSize:12,fontWeight:700,margin:"0 0 4px"}}>Gratis para siempre</p>
+              <p style={{color:C.muted,fontSize:13,margin:0,lineHeight:1.5}}>Empieza a invertir en comunidad sin costo.</p>
             </div>
             <div style={{marginBottom:24}}>
               {FREE_FEATURES.map((f,i)=>(
@@ -1538,7 +1531,7 @@ function PremiumPage({user, isPremium, onSubscribe, onNeedAuth, lang}){
             <div style={{position:"absolute",top:0,left:0,right:0,bottom:0,background:`radial-gradient(circle at 80% 20%,${C.accent}10,transparent 50%)`,pointerEvents:"none"}}/>
             <div style={{position:"relative"}}>
               <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16}}>
-                <span style={{fontSize:12,fontWeight:700,color:C.accent,letterSpacing:1}}>⭐ PREMIUM</span>
+                <span style={{fontSize:12,fontWeight:700,color:C.accent,letterSpacing:1}}>⭐ VIP MEMBER</span>
                 <span style={{background:C.gold+"33",color:C.gold,border:`1px solid ${C.gold}55`,borderRadius:20,padding:"3px 10px",fontSize:10,fontWeight:800}}>MÁS POPULAR</span>
               </div>
               <div style={{display:"flex",alignItems:"baseline",gap:4,marginBottom:4}}>
@@ -1546,7 +1539,7 @@ function PremiumPage({user, isPremium, onSubscribe, onNeedAuth, lang}){
                 <span style={{color:"#94a3b8",fontSize:14}}>/mes</span>
               </div>
               {billing==="yearly"&&<div style={{color:C.bull,fontSize:12,fontWeight:700,marginBottom:6}}>💰 Ahorras €{savings} al año</div>}
-              <p style={{color:"#94a3b8",fontSize:13,margin:"0 0 20px",lineHeight:1.5}}>Todo lo que necesitas para tradear con ventaja.</p>
+              <p style={{color:"#94a3b8",fontSize:13,margin:"0 0 20px",lineHeight:1.5}}>$9.99 / mes · cancela cuando quieras</p>
               <div style={{marginBottom:24}}>
                 {PREMIUM_FEATURES.map((f,i)=>(
                   <div key={i} style={{display:"flex",alignItems:"flex-start",gap:10,padding:"7px 0",borderBottom:i<PREMIUM_FEATURES.length-1?"1px solid #1e293b":"none"}}>
@@ -1567,7 +1560,7 @@ function PremiumPage({user, isPremium, onSubscribe, onNeedAuth, lang}){
                 <button onClick={handleSubscribe} style={{width:"100%",background:`linear-gradient(135deg,${C.accent},#00a87f)`,border:"none",borderRadius:12,padding:"13px",fontSize:14,fontWeight:800,color:"#fff",cursor:"pointer",boxShadow:`0 4px 16px ${C.accent}44`,transition:"opacity 0.15s"}}
                   onMouseEnter={e=>e.currentTarget.style.opacity="0.9"}
                   onMouseLeave={e=>e.currentTarget.style.opacity="1"}>
-                  ⭐ Suscribirme por €{price}/mes →
+                  ⭐ Hazte VIP por $9.99/mes →
                 </button>
                 <p style={{margin:"10px 0 0",color:"#475569",fontSize:11,textAlign:"center"}}>💳 Pago seguro · Cancela cuando quieras · Sin permanencia</p>
               </>}
